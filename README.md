@@ -63,6 +63,6 @@ The set of resources that can/could be managed by this provider are listed in
 [the PostHog API docs](https://posthog.com/docs/api).
 
 | Resource type | Supported | Notes |
--------------------------------------
-| [Projects](docs/resources/project.md) | ✔ | Missing: event filters, correlation analysis exclusions, path cleaning rules |
-| [Actions](docs/resources/action.md)   | ✔ | Missing: filters |
+|---------------|-----------|-------|
+| [Projects](docs/resources/project.md) | ✅ | Missing: event filters, correlation analysis exclusions, path cleaning rules |
+| [Actions](docs/resources/action.md)   | ✅ | Missing: filters |
