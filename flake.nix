@@ -32,6 +32,12 @@
           version = rev;
           src = pkgs.lib.cleanSource self;
           vendorHash = "sha256-FQHHK9xWh0DbeV1a6I9CKlkP73B/XObxSphSydIyEOU=";
+          postInstall = ''
+            INSTALL_DIR=$out/hashicorp.com/abustany/posthog/0.0.1/$(go env GOOS)_$(go env GOARCH)
+            mkdir -p $INSTALL_DIR
+            mv $out/bin/terraform-provider-posthog $INSTALL_DIR/
+            rmdir $out/bin
+          '';
         };
       }
     );
