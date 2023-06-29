@@ -12,7 +12,6 @@
         overlays = [];
         pkgs = import nixpkgs {
           inherit system overlays;
-          config = { allowUnfree = true; };
         };
         rev = if (self ? shortRev) then self.shortRev else "dev";
       in
