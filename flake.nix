@@ -30,7 +30,7 @@
           pname = "terraform-provider-posthog";
           version = rev;
           src = pkgs.lib.cleanSource self;
-          vendorHash = "sha256-FQHHK9xWh0DbeV1a6I9CKlkP73B/XObxSphSydIyEOU=";
+          vendorHash = "sha256-BBtFLwZzGQnBlBtASQZOym0pUvvoF7NOohkm/DU8Yb4=";
           postInstall = ''
             INSTALL_DIR=$out/hashicorp.com/abustany/posthog/0.0.1/$(go env GOOS)_$(go env GOARCH)
             mkdir -p $INSTALL_DIR
