@@ -164,6 +164,9 @@ func (r *projectResource) Schema(ctx context.Context, req resource.SchemaRequest
 			"api_token": schema.StringAttribute{
 				MarkdownDescription: "API token used to send events to this project",
 				Computed:            true,
+				PlanModifiers: []planmodifier.String{
+					stringplanmodifier.UseStateForUnknown(),
+				},
 			},
 		},
 	}
