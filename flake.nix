@@ -2,7 +2,7 @@
   description = "PostHog Terraform provider";
 
   inputs = {
-    nixpkgs.url      = "github:NixOS/nixpkgs";
+    nixpkgs.url      = "github:NixOS/nixpkgs/nixos-24.05";
     flake-utils.url  = "github:numtide/flake-utils";
   };
 
@@ -12,6 +12,7 @@
         overlays = [];
         pkgs = import nixpkgs {
           inherit system overlays;
+          config = { allowUnfree = true; }; # Terraform is considered unfree since their switch to BUSL
         };
         rev = if (self ? shortRev) then self.shortRev else "dev";
       in
@@ -26,7 +27,7 @@
           ];
         };
 
-        packages.default = pkgs.buildGo120Module {
+        packages.default = pkgs.buildGo122Module {
           pname = "terraform-provider-posthog";
           version = rev;
           src = pkgs.lib.cleanSource self;
