@@ -25,7 +25,7 @@ jobs:
         uses: cachix/install-nix-action@V27
 
       - name: Run the Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v7
+        uses: DeterminateSystems/magic-nix-cache-action@v8
 
       - name: Check that the generated files are up to date
         run: nix develop -c ./scripts/check-go-generate.sh
